@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --text: #707070;
+  --text-h: #1a1a1a;
+  --bg: #fafafa;
+  --border: #e0e0e0;
+  --accent: #1a1a1a;
+  --sans: -apple-system, 'Helvetica Neue', sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+
+  font: 15px/1.6 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #8a8a8a;
+    --text-h: #e8e8e8;
+    --bg: #111;
+    --border: #282828;
+    --accent: #e8e8e8;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: -0.5px;
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 28px;
+  letter-spacing: -0.3px;
+  margin: 0 0 32px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 24px 0 0;
+}
+
+p {
+  margin: 0;
+}
