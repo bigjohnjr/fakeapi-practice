@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
 import Orders from "./components/Orders";
 import "./App.css";
@@ -13,7 +13,6 @@ Display total price and products
 */
 
 function App() {
-  const [product, setProduct] = useState("");
   const [productList, setProductList] = useState([]);
   const [orderList, setOrderList] = useState([]);
 
@@ -24,7 +23,6 @@ function App() {
         const response = await fetch(url);
         const result = await response.json();
         setProductList(result.data);
-        console.log(result.data);
       } catch (error) {
         console.log(error);
       }
@@ -34,24 +32,20 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <BrowserRouter>
-          <Routes>
-            <Route
-              index
-              element={
-                <Products
-                  productList={productList}
-                  setOrderList={setOrderList}
-                />
-              }
-            />
-            <Route path="orders" element={<Orders orderList={orderList} />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Products productList={productList} setOrderList={setOrderList} />
+          }
+        />
+        <Route
+          path="/orders"
+          element={<Orders orderList={orderList} setOrderList={setOrderList} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -44,6 +44,10 @@ button.add-btn {
   transition: opacity 0.15s;
 }
 
+button.add-btn:disabled {
+  background: grey;
+}
+
 button.add-btn:hover {
   opacity: 0.7;
 }
